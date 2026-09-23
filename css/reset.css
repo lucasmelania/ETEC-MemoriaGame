@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Aerodynamic-Oblique";
+  src: url("/fonts/Aerodynamic-Oblique.ttf.woff") format("woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Aerodynamic-Oblique";
+}
