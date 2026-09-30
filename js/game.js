@@ -15,14 +15,14 @@ const TIMING_DURATION = 2200;
 const TIMING_SPEED = 620;
 
 const characters = [
-  { id: "master-sword", image: "1.png", label: "Master Sword" },
+  { id: "master-sword", image: "6.png", label: "Master Sword" },
   { id: "link", image: "2.png", label: "Link" },
-  { id: "deku-tree", image: "3.png", label: "Deku Tree" },
-  { id: "hylian-shield", image: "4.png", label: "Escudo Hyliano" },
+  { id: "deku-tree", image: "1.png", label: "Deku Tree" },
+  { id: "hylian-shield", image: "4.png", label: "Princesa" },
   { id: "kingdom", image: "5.png", label: "Reino de Hyrule" },
   {
     id: "legend",
-    image: "6.png",
+    image: "3.png",
     label: "Lenda de Zelda",
     size: "contain",
     color: "#102c25",

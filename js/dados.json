@@ -1,0 +1,23 @@
+{
+  "game": {
+    "id": "game_12345",
+    "finishedAt": ""
+  },
+  "players": [
+    {
+      "name": "",
+      "score":0,
+      "rank": 0
+    },
+    {
+      "name": "",
+      "score": 0,
+      "rank": 0
+    },
+    {
+      "name": "",
+      "score":0,
+      "rank":0
+    }
+  ]
+}
