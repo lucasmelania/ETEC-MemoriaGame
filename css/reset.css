@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Aerodynamic-Oblique";
-  src: url("/fonts/Aerodynamic-Oblique.ttf.woff") format("woff");
+  src: url("../fonts/Aerodynamic-Oblique.ttf.woff") format("woff");
 }
 
 * {
@@ -10,4 +10,9 @@
   box-sizing: border-box;
   border: none;
   font-family: "Aerodynamic-Oblique";
+}
+
+button,
+input {
+  font: inherit;
 }

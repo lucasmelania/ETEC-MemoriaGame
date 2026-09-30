@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,18 +7,40 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/login.css" />
 
-    <script defer src="/js/login.js"></script>
+    <script defer src="./js/ranking.js"></script>
+    <script defer src="./js/login.js"></script>
 
-    <title>Jogo da Memoria | Login</title>
+    <title>Memória de Hyrule</title>
   </head>
   <body>
     <form class="login-form">
       <div class="login-header">
-        <img src="/images/Zelda_Logo.png" alt="Zelda logo" />
+        <img src="./images/Zelda_Logo.png" alt="The Legend of Zelda" />
+        <p>Teste sua memória em uma aventura por Hyrule</p>
       </div>
 
-      <input type="text" placeholder="Name" class="login_input" />
-      <button type="submit" class="login_button" disabled>Play</button>
+      <label class="sr-only" for="player-name">Nome do aventureiro</label>
+      <input
+        id="player-name"
+        type="text"
+        placeholder="Seu nome de aventureiro"
+        class="login_input"
+        autocomplete="name"
+      />
+      <button type="submit" class="login_button" disabled>
+        Iniciar aventura <span aria-hidden="true">➜</span>
+      </button>
+
+      <section class="leaderboard" aria-labelledby="ranking-title">
+        <div class="leaderboard-heading">
+          <span aria-hidden="true">#</span>
+          <div>
+            <h1 id="ranking-title">Ranking de Hyrule</h1>
+            <p>Os menores tempos vencem</p>
+          </div>
+        </div>
+        <ol class="ranking-list" aria-live="polite"></ol>
+      </section>
     </form>
   </body>
 </html>

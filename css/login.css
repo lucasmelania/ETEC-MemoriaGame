@@ -2,9 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  background-image: url('../images/Background_login.jpg');
+  min-height: 100vh;
+  background-image: url("../images/Background_login.jpg");
+  background-position: center;
+  background-size: cover;
   justify-content: center;
+  padding: 32px 20px;
+  position: relative;
+  isolation: isolate;
+}
+
+.login-form::before {
+  background: linear-gradient(
+    135deg,
+    rgba(3, 16, 12, 0.86),
+    rgba(9, 32, 35, 0.48) 56%,
+    rgba(1, 10, 7, 0.8)
+  );
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 /* vh: viewport height, altura da janela visivel*/
@@ -14,40 +32,179 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .login-header img {
   width: 100%;
   max-width: 500px;
   height: auto;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
+}
+
+.login-header p {
+  color: #fbf2cf;
+  font-family: Arial, sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  margin-top: 16px;
+  max-width: 300px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
 .login_input {
-  border: 2px solid #333;
-  border-radius: 8px;
-  color: #333;
-  font-size: 1em;
+  background: rgba(255, 252, 235, 0.95);
+  border: 2px solid rgba(234, 202, 107, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+  color: #23352a;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
   margin-bottom: 15px;
-  max-width: 300px;
+  max-width: 340px;
   outline: none;
-  padding: 15px;
+  padding: 16px 18px;
   width: 100%;
 }
 
+.login_input:focus {
+  border-color: #fff0a8;
+  box-shadow:
+    0 0 0 4px rgba(236, 199, 92, 0.25),
+    0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
 .login_button {
-  background-color: #c9b85d;
-  padding: 15px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #d6ac47, #8e6425);
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.25),
+    inset 0 1px rgba(255, 255, 255, 0.35);
+  padding: 16px 18px;
+  border-radius: 12px;
   cursor: pointer;
-  color: #fff;
-  font-size: 1em;
-  max-width: 300px;
+  color: #fff9de;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  max-width: 340px;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
   width: 100%;
+}
+
+.login_button:not(:disabled):hover,
+.login_button:not(:disabled):focus-visible {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
 }
 
 .login_button:disabled {
   background-color: #eee;
   color: #aaa;
   cursor: auto;
+}
+
+.leaderboard {
+  backdrop-filter: blur(10px);
+  background: rgba(7, 26, 22, 0.82);
+  border: 1px solid rgba(242, 206, 104, 0.48);
+  border-radius: 14px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.08);
+  color: #fff7d9;
+  margin-top: 28px;
+  max-width: 380px;
+  padding: 17px 20px;
+  width: 100%;
+}
+
+.leaderboard-heading {
+  align-items: center;
+  border-bottom: 1px solid rgba(242, 206, 104, 0.25);
+  display: flex;
+  gap: 12px;
+  padding-bottom: 13px;
+}
+
+.leaderboard-heading > span {
+  font-size: 1.7rem;
+}
+
+.leaderboard-heading h1 {
+  font-size: 1.18rem;
+}
+
+.leaderboard-heading p {
+  color: #d4ddc6;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+.ranking-list {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 9px 0 0;
+}
+
+.ranking-list li {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  min-height: 34px;
+}
+
+.ranking-position {
+  color: #f2ce68;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ranking-name {
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-time {
+  color: #ffe596;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.ranking-empty {
+  color: #d4ddc6;
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+}
+
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .login-header img {
+    max-width: 240px;
+  }
+
+  .login-header {
+    margin-bottom: 24px;
+  }
 }
