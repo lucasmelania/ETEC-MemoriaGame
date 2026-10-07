@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/login.css" />
+
+    <script defer src="./js/ranking.js"></script>
+    <script defer src="./js/login.js"></script>
+
+    <title>Memória de Hyrule</title>
+  </head>
+  <body>
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="./images/zelda2.jpg"
+    >
+      <source src="./video/Background_Animade.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <form class="login-form">
+      <div class="login-header">
+        <img src="./images/zeldalogo22.png" alt="The Legend of Zelda" />
+        <p>Teste sua memória em uma aventura por Hyrule</p>
+      </div>
+
+      <label class="sr-only" for="player-name">Nome do aventureiro</label>
+      <input
+        id="player-name"
+        type="text"
+        placeholder="Seu nome de aventureiro"
+        class="login_input"
+        autocomplete="name"
+      />
+      <button type="submit" class="login_button" disabled>
+        Iniciar aventura <span aria-hidden="true">➜</span>
+      </button>
+
+      <section class="leaderboard" aria-labelledby="ranking-title">
+        <div class="leaderboard-heading">
+          <span aria-hidden="true">#</span>
+          <div>
+            <h1 id="ranking-title">Ranking de Hyrule</h1>
+            <p>Os menores tempos vencem</p>
+          </div>
+        </div>
+        <ol class="ranking-list" aria-live="polite"></ol>
+      </section>
+    </form>
+  </body>
+</html>

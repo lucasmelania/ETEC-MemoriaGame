@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/game.css" />
+
+    <script defer src="../js/ranking.js"></script>
+    <script defer src="../js/game.js"></script>
+
+    <title>Memória de Hyrule</title>
+  </head>
+
+  <body>
+    <video
+      class="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      poster="../images/zelda.jpg"
+    >
+      <source src="../video/Background_Animade2.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <main>
+      <section class="game-shell" aria-label="Jogo da memória de Zelda">
+        <header class="game-header">
+          <div class="player-info">
+            <span class="eyebrow">Aventura em Hyrule</span>
+            <strong class="player"></strong>
+          </div>
+
+          <div class="header-actions">
+            <a class="home-button" href="../index.html"
+              ><span aria-hidden="true">⌂</span> Início</a
+            >
+            <div class="timer-card" aria-label="Tempo de jogo">
+              <div>
+                <span class="eyebrow">Tempo</span>
+                <strong class="timer">00:00</strong>
+              </div>
+            </div>
+            <button class="restart-button" type="button">
+              <span aria-hidden="true">↻</span> Reiniciar
+            </button>
+          </div>
+        </header>
+
+        <section class="powers-panel" aria-labelledby="powers-title">
+          <div class="powers-heading">
+            <div>
+              <span class="eyebrow">Bolsa do aventureiro</span>
+              <h1 id="powers-title">Poderes especiais</h1>
+            </div>
+            <span class="power-hint">Encontre pares para ganhar cargas</span>
+          </div>
+
+          <div class="powers-list">
+            <button
+              class="power-button"
+              type="button"
+              data-power="vision"
+              aria-label="Usar Visão"
+            >
+              <span class="power-icon" aria-hidden="true">V</span>
+              <span class="power-copy"
+                ><strong>Visão</strong><small>Revela cartas</small></span
+              >
+              <span class="power-count" data-power-count="vision">×0</span>
+            </button>
+            <button
+              class="power-button"
+              type="button"
+              data-power="undo"
+              aria-label="Usar Reversão"
+            >
+              <span class="power-icon" aria-hidden="true">R</span>
+              <span class="power-copy"
+                ><strong>Reversão</strong><small>Desfaz o erro</small></span
+              >
+              <span class="power-count" data-power-count="undo">×0</span>
+            </button>
+            <button
+              class="power-button"
+              type="button"
+              data-power="explosion"
+              aria-label="Usar Explosão"
+            >
+              <span class="power-icon" aria-hidden="true">E</span>
+              <span class="power-copy"
+                ><strong>Explosão</strong><small>Varre uma área</small></span
+              >
+              <span class="power-count" data-power-count="explosion">×0</span>
+            </button>
+          </div>
+        </section>
+
+        <p class="power-notification" role="status" aria-live="polite"></p>
+
+        <section class="board-panel" aria-label="Tabuleiro de cartas">
+          <div class="grid"></div>
+
+          <section
+            class="timing-game"
+            hidden
+            aria-labelledby="timing-title"
+            aria-live="assertive"
+          >
+            <div class="timing-dialog">
+              <span class="eyebrow">Recompensa em jogo</span>
+              <h2 id="timing-title">Acerte o alvo!</h2>
+              <p class="timing-instruction">
+                Toque quando o marcador dourado cruzar a marca verde.
+              </p>
+
+              <button
+                class="timing-ring"
+                type="button"
+                aria-label="Tentar acertar o alvo de reflexo"
+              >
+                <span class="timing-target" aria-hidden="true"></span>
+                <span class="timing-pointer" aria-hidden="true"></span>
+                <span class="timing-center" aria-hidden="true">GO</span>
+              </button>
+
+              <p class="timing-status">Prepare-se...</p>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

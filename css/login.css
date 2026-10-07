@@ -1,0 +1,240 @@
+body {
+  background-color: #101626;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 14, 22, 0.4);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: transparent;
+  justify-content: center;
+  padding: 32px 20px;
+  position: relative;
+  isolation: isolate;
+}
+
+/* vh: viewport height, altura da janela visivel*/
+
+.login-header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.login-header img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.45));
+}
+
+.login-header p {
+  color: #ffe17b;
+  font-family: Arial, sans-serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  margin-top: 16px;
+  max-width: 300px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
+.login_input {
+  background: rgba(255, 252, 235, 0.95);
+  border: 2px solid rgba(234, 202, 107, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+  color: #23352a;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  max-width: 340px;
+  outline: none;
+  padding: 16px 18px;
+  width: 100%;
+}
+
+.login_input:focus {
+  border-color: #fff0a8;
+  box-shadow:
+    0 0 0 4px rgba(236, 199, 92, 0.25),
+    0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+.login_button {
+  background: linear-gradient(135deg, #d6ac47, #8e6425);
+  box-shadow:
+    0 10px 22px rgba(0, 0, 0, 0.25),
+    inset 0 1px rgba(255, 255, 255, 0.35);
+  padding: 16px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #fff9de;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  max-width: 340px;
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+  width: 100%;
+}
+
+.login_button:not(:disabled):hover,
+.login_button:not(:disabled):focus-visible {
+  filter: brightness(1.12);
+  transform: translateY(-2px);
+}
+
+.login_button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+
+.leaderboard {
+  backdrop-filter: blur(5px);
+  background: transparent;
+  border: 1px solid rgba(242, 206, 104, 0.48);
+  border-radius: 14px;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.08);
+  color: #ffe17b;
+  margin-top: 28px;
+  max-width: 380px;
+  padding: 17px 20px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+  width: 100%;
+}
+
+.leaderboard-heading {
+  align-items: center;
+  border-bottom: 1px solid rgba(242, 206, 104, 0.25);
+  display: flex;
+  gap: 12px;
+  padding-bottom: 13px;
+}
+
+.leaderboard-heading > span {
+  font-size: 1.7rem;
+}
+
+.leaderboard-heading h1 {
+  color: #ffe17b;
+  font-size: 1.18rem;
+  -webkit-text-stroke: 0.4px #ffffff;
+}
+
+.leaderboard-heading p {
+  color: #ffe17b;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  margin-top: 3px;
+}
+
+.ranking-list {
+  display: grid;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 9px 0 0;
+}
+
+.ranking-list li {
+  align-items: center;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  min-height: 34px;
+}
+
+.ranking-position {
+  color: #ffe17b;
+  font-family: Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  -webkit-text-stroke: 0.3px #ffffff;
+}
+
+.ranking-name {
+  color: #ffe17b;
+  font-family: Arial, sans-serif;
+  font-size: 0.88rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-text-stroke: 0.25px #ffffff;
+  white-space: nowrap;
+}
+
+.ranking-time {
+  color: #ffe17b;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  -webkit-text-stroke: 0.3px #ffffff;
+}
+
+.ranking-empty {
+  color: #ffe17b;
+  font-family: Arial, sans-serif;
+  font-size: 0.82rem;
+}
+
+.sr-only {
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .login-header img {
+    max-width: 240px;
+  }
+
+  .login-header {
+    margin-bottom: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-video {
+    display: none;
+  }
+
+  body {
+    background-image: url("../images/zelda2.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+}
