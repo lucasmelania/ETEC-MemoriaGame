@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/reset.css?v=3" />
+    <link rel="stylesheet" href="./css/login.css?v=5" />
 
     <script defer src="./js/ranking.js"></script>
     <script defer src="./js/login.js"></script>
@@ -13,20 +13,18 @@
     <title>Memória de Hyrule</title>
   </head>
   <body>
-    <video
-      class="bg-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      poster="./images/zelda2.jpg"
-    >
-      <source src="./video/Background_Animade.mp4" type="video/mp4" />
+    <video class="bg-video" autoplay muted loop playsinline preload="auto">
+      <source src="./video/Background_Animade2.mp4" type="video/mp4" />
     </video>
     <div class="bg-overlay" aria-hidden="true"></div>
 
-    <form class="login-form">
+    <form
+      class="login-form"
+      style="
+        background: transparent !important;
+        background-image: none !important;
+      "
+    >
       <div class="login-header">
         <img src="./images/zeldalogo22.png" alt="The Legend of Zelda" />
         <p>Teste sua memória em uma aventura por Hyrule</p>

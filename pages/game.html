@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/game.css" />
+    <link rel="stylesheet" href="../css/reset.css?v=3" />
+    <link rel="stylesheet" href="../css/game.css?v=4" />
 
     <script defer src="../js/ranking.js"></script>
     <script defer src="../js/game.js"></script>
@@ -13,20 +13,17 @@
   </head>
 
   <body>
-    <video
-      class="bg-video"
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="auto"
-      poster="../images/zelda.jpg"
-    >
+    <video class="bg-video" autoplay muted loop playsinline preload="auto">
       <source src="../video/Background_Animade2.mp4" type="video/mp4" />
     </video>
     <div class="bg-overlay" aria-hidden="true"></div>
 
-    <main>
+    <main
+      style="
+        background: transparent !important;
+        background-image: none !important;
+      "
+    >
       <section class="game-shell" aria-label="Jogo da memória de Zelda">
         <header class="game-header">
           <div class="player-info">

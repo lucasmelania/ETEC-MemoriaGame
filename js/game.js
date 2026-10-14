@@ -586,8 +586,26 @@ const startGame = () => {
 
   const bgVideo = document.querySelector(".bg-video");
   if (bgVideo) {
+    bgVideo.muted = true;
     bgVideo.play().catch(() => {});
   }
 };
+
+const initBgVideo = () => {
+  const bgVideo = document.querySelector(".bg-video");
+  if (bgVideo) {
+    bgVideo.muted = true;
+    bgVideo.defaultMuted = true;
+    bgVideo.play().catch(() => {});
+  }
+};
+
+initBgVideo();
+window.addEventListener("click", () => {
+  const bgVideo = document.querySelector(".bg-video");
+  if (bgVideo && bgVideo.paused) {
+    bgVideo.play().catch(() => {});
+  }
+}, { once: true });
 
 window.addEventListener("DOMContentLoaded", startGame);
